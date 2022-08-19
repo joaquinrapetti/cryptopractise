@@ -6,6 +6,7 @@ import styled from "styled-components/native";
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
   background-color: orange;
+  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
 `;
 
 const AppContainer = styled.View`
@@ -18,9 +19,9 @@ const AppContainer = styled.View`
 export default function App() {
   return (
     <SafeArea>
+      <ExpoStatusBar style="auto" />
       <AppContainer>
         <Text>CRYPTO App</Text>
-        <ExpoStatusBar style="auto" />
       </AppContainer>
     </SafeArea>
   );
